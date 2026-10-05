@@ -1,3 +1,22 @@
 workflows:
-sampleworkflow:
-name: Sample workflow
+  apkforge_android:
+    name: APKForge Android APK
+
+    environment:
+      node: 20
+
+    scripts:
+      - name: Install Cordova
+        script: npm install -g cordova
+
+      - name: Install dependencies
+        script: npm install
+
+      - name: Add Android platform
+        script: cordova platform add android
+
+      - name: Build Android APK
+        script: cordova build android
+
+    artifacts:
+      - platforms/android/app/build/outputs/apk/debug/*.apk
