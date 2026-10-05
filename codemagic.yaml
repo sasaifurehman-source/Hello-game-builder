@@ -1,5 +1,3 @@
-
- 
 ​workflows:
-sampleworkflow:
-name: Sample workflow
+  sampleworkflow:
+name:    Sample workflow
